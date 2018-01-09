@@ -57,9 +57,9 @@ jQuery(document).ready(function($) {
 
 
 
-    $(window).scroll(function(){
-         $('.main-header').toggleClass('scrolled', $(this).scrollTop() > 1);
-     });
+    // $(window).scroll(function(){
+    //      $('.main-header').toggleClass('scrolled', $(this).scrollTop() > 1);
+    //  });
 
 
 
