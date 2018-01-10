@@ -589,17 +589,21 @@ hr {
   background-color: #2ecc71;
 }
 
-.portfolio-item {
+.documentation-title {
+  text-align: center;
+  font-size: 18px;
+}
+.documentation-item {
   margin-bottom: 30px;
 }
-.portfolio-item .portfolio-thumb {
+.documentation-item .documentation-thumb {
   position: relative;
   overflow: hidden;
 }
-.portfolio-item .portfolio-thumb img {
+.documentation-item .documentation-thumb img {
   width: 100%;
 }
-.portfolio-item .portfolio-thumb .portfolio-overlay {
+.documentation-item .documentation-thumb .documentation-overlay {
   background-color: #ec523f;
   position: absolute;
   width: 100%;
@@ -615,7 +619,7 @@ hr {
   -moz-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
-.portfolio-item .portfolio-thumb .portfolio-overlay h3 {
+.documentation-item .documentation-thumb .documentation-overlay h3 {
   font-size: 18px;
   text-transform: uppercase;
   color: white;
@@ -624,9 +628,9 @@ hr {
   display: inline-block;
   border-bottom: 1px solid white;
 }
-.portfolio-item .portfolio-thumb .portfolio-overlay a.expand {
+.documentation-item .documentation-thumb .documentation-overlay a.expand {
   margin-top: 15px;
-  width: 36px;
+  width: 76px;
   height: 36px;
   border-radius: 18px;
   -webkit-border-radius: 18px;
@@ -635,10 +639,10 @@ hr {
   display: inline-block;
   text-align: center;
 }
-.portfolio-item .portfolio-thumb .portfolio-overlay a.expand i {
+.documentation-item .documentation-thumb .documentation-overlay a.expand i {
   line-height: 36px;
 }
-.portfolio-item .portfolio-thumb:hover .portfolio-overlay {
+.documentation-item .documentation-thumb:hover .documentation-overlay {
   opacity: 1;
   visibility: visible;
 }
