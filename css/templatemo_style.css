@@ -219,7 +219,6 @@ textarea:focus {
   color: white;
   border: 1px solid white;
   padding: 12px 20px;
-  text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
 }
@@ -304,7 +303,6 @@ hr {
   margin-right: 35px;
 }
 .main-menu ul li a {
-  text-transform: uppercase;
   font-size: 14px;
   color: #444444;
   line-height: 100px;
@@ -370,7 +368,6 @@ hr {
 }
 .flexslider .slider-caption h2 {
   color: white;
-  text-transform: uppercase;
   font-size: 36px;
   font-weight: 700;
   border-bottom: 1px solid white;
@@ -379,7 +376,6 @@ hr {
 }
 .flexslider .slider-caption p {
   color: white;
-  text-transform: uppercase;
   font-size: 18px;
   margin-top: 20px;
   margin-bottom: 26px;
@@ -390,7 +386,6 @@ hr {
   background-color: #ec523f;
   padding: 12px 20px;
   border-radius: 4px;
-  text-transform: uppercase;
   font-weight: 700;
 }
 @media screen and (min-width: 989px) {
@@ -482,8 +477,11 @@ hr {
   }
 }
 
-.content-section {
+.content-section#overview {
   margin-top: 80px;
+}
+
+.content-section {
   padding-top: 60px;
 }
 
@@ -493,7 +491,6 @@ hr {
 .heading-section h2 {
   font-size: 28px;
   font-weight: 600;
-  text-transform: uppercase;
   border-bottom: 1px solid #444444;
   display: inline-block;
 }
@@ -501,7 +498,6 @@ hr {
   color: #444444;
   font-size: 16px;
   font-weight: 300;
-  text-transform: uppercase;
   margin-top: 10px;
 }
 
@@ -557,7 +553,6 @@ hr {
 }
 .service-item .service-content h3 {
   font-size: 18px;
-  text-transform: uppercase;
   color: white;
   display: inline-block;
   padding-bottom: 10px;
@@ -621,7 +616,6 @@ hr {
 }
 .documentation-item .documentation-thumb .documentation-overlay h3 {
   font-size: 18px;
-  text-transform: uppercase;
   color: white;
   padding-bottom: 10px;
   margin-bottom: 10px;
@@ -680,7 +674,6 @@ hr {
 }
 .team-member .member-thumb .team-overlay h3 {
   font-size: 18px;
-  text-transform: uppercase;
   color: white;
   display: inline-block;
   padding-bottom: 10px;
@@ -688,7 +681,6 @@ hr {
   margin-top: 64px;
 }
 .team-member .member-thumb .team-overlay span {
-  text-transform: uppercase;
   font-weight: 300;
   margin-top: 10px;
   display: block;
@@ -722,7 +714,6 @@ hr {
 .skills-heading h3.skills-title {
   font-style: italic;
   font-size: 18px;
-  text-transform: uppercase;
   color: #5e5e5e;
 }
 .skills-heading .small-text {
@@ -741,7 +732,6 @@ hr {
   line-height: 34px;
   text-align: left;
   padding-left: 15px;
-  text-transform: uppercase;
   font-weight: 700;
   background-color: #ec523f;
   box-shadow: none;
@@ -774,7 +764,6 @@ hr {
   margin-top: 15px;
   color: white;
   background-color: #ec523f;
-  text-transform: uppercase;
   border: 0;
 }
 
@@ -782,7 +771,6 @@ hr {
   background-color: #ec523f;
   color: white;
   padding: 15px 40px;
-  text-transform: uppercase;
   font-weight: 700;
 }
 
