@@ -1,96 +1,105 @@
-jQuery(document).ready(function($) {
+jQuery(function() {
+	var $sidebar = $('#sidebar'),
+		$nav = $('.nav'),
+		$main = $('.main');
 
-	'use strict';
+	var found = true;
 
+	var $el;
 
-	/************** Toggle *********************/
-    // Cache selectors
-    var lastId,
-        topMenu = $(".menu-first"),
-        topMenuHeight = 50,
-        // All list items
-        menuItems = topMenu.find("a"),
-        // Anchors corresponding to menu items
-        scrollItems = menuItems.map(function(){
-          
-          if($(this).hasClass('external')) {
-            return;
-          }
-            
-          var item = $($(this).attr("href"));
-          if (item.length) { return item; }
-        });
+	$sidebar.find('a').click(function() {
+		$('body').removeClass('nav-open');
+	});
 
-    // Bind click handler to menu items
-    // so we can get a fancy scroll animation
-    menuItems.click(function(e){
-      var href = $(this).attr("href"),
-          offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-      $('html, body').stop().animate({ 
-          scrollTop: offsetTop
-      }, 300);
-      e.preventDefault();
-    });
+	$("section > div.highlighter-rouge:first-of-type").each(function(i) {
 
-    // Bind to scroll
-    $(window).scroll(function(){
-       // Get container scroll position
-       var fromTop = $(this).scrollTop()+topMenuHeight;
-       
-       // Get id of current scroll item
-       var cur = scrollItems.map(function(){
-         if ($(this).offset().top < fromTop)
-           return this;
-       });
-       // Get the id of the current element
-       cur = cur[cur.length-1];
-       var id = cur && cur.length ? cur[0].id : "";
-       
-       if (lastId !== id) {
-           lastId = id;
-           // Set/remove active class
-           menuItems
-             .parent().removeClass("active")
-             .end().filter("[href=#"+id+"]").parent().addClass("active");
-       }                   
-    });
+		var $this = $(this).before("<ul class=\"languages\"></ul>"),
+		$languages = $this.prev(),
+		$notFirst = $this.nextUntil(":not(div.highlighter-rouge)"),
+		$all = $this.add($notFirst);
+
+		$all.add($languages).wrapAll("<div class=\"code-viewer\"></div>");
 
 
+		listLanguages($all, $languages);
 
-    // $(window).scroll(function(){
-    //      $('.main-header').toggleClass('scrolled', $(this).scrollTop() > 1);
-    //  });
+		$this.css('display', 'block');
+		$notFirst.css('display', 'none');
 
+		$languages.find('a').first().addClass('active');
 
+		$languages.find('a').click(function() {
+			$all.css('display', 'none');
+			$all.eq($(this).parent().index()).css('display', 'block');
 
-    $('a[href="#top"]').click(function(){
-        $('html, body').animate({scrollTop: 0}, 'slow');
-        return false;
-    });
+			$languages.find('a').removeClass('active');
+			$(this).addClass('active');
+			return false;
+		});
 
+		if ($languages.children().length === 0) {
+			$languages.remove();
+		}
+	});
 
-    $('.flexslider').flexslider({
-      slideshow: true,
-      slideshowSpeed: 3000,  
-      animation: "fade",
-      directionNav: false,
-    });
+	function listLanguages($el, $insert) {
+		$el.each(function(i) {
+			var title = $(this).attr('title');
+			if (title) {
+				$insert.append("<li><a href=\"#\">" + title + "</a></li>");
+			}
+		});
+	}
 
+	var href = $('.sidebar a').first().attr("href");
 
-    $('.toggle-menu').click(function(){
-        $('.menu-first').toggleClass('show');
-        // $('.menu-first').slideToggle();
-    });
+	if (href !== undefined && href.charAt(0) === "#") {
+		setActiveSidebarLink();
 
-    $('.menu-first li a').click(function(){
-      $('.menu-first').removeClass('show');
-    });
+		$(window).on("scroll", function(evt) {
+			setActiveSidebarLink();
+		});
+	}
 
+	function setActiveSidebarLink() {
+			$('.sidebar a').removeClass('active');
+				var $closest = getClosestHeader();
+				$closest.addClass('active');
+				document.title = $closest.text();
 
-    /************** LightBox *********************/
-      $(function(){
-        $('[data-rel="lightbox"]').lightbox();
-      });
-
-
+	}
 });
+
+function getClosestHeader() {
+	var $links = $('.sidebar a'),
+	top = window.scrollY,
+	$last = $links.first();
+
+	if (top < 300) {
+		return $last;
+	}
+
+	if (top + window.innerHeight >= $(".main").height()) {
+		return $links.last();
+	}
+
+	for (var i = 0; i < $links.length; i++) {
+		var $link = $links.eq(i),
+		href = $link.attr("href");
+
+		if (href !== undefined && href.charAt(0) === "#" && href.length > 1) {
+			var $anchor = $(href);
+
+			if ($anchor.length > 0) {
+				var offset = $anchor.offset();
+
+				if (top < offset.top - 300) {
+					return $last;
+				}
+
+				$last = $link;
+			}
+		}
+	}
+	return $last;
+}

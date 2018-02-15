@@ -1,6 +1,2 @@
-#files for locally hosted ssl
-key.pem
-cert.pem
-
-# editor file
-.vscode
+_site/
+.sass-cache/
