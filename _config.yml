@@ -1,20 +1,23 @@
 # ----
 # Site
 
-title: Aviator
-description: Jekyll template for API documentation.
-url: https://example.com
+title: TransomJS
+description: Uncompromising RAPID API Development on Node
+url: https://transomjs.github.io
 google_analytics_key:
 permalink: pretty
 baseurl: https://transomjs.github.io/
 
 collections:
+  gettingstarted:
+    title: Getting Started
+    position: 1
   documentation:
     title: Documentation
-    position: 1
+    position: 2
   api:
     title: APIs
-    position: 2
+    position: 33
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

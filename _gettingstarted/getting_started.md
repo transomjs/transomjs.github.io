@@ -5,9 +5,9 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  Welcome to our API.
+  Welcome to TransomJS
 
-  This API document is designed for those interested in developing for our platform.
+  This API document is designed for those interested in developing APIs using TransomJS on Node
 
   This API is still under development and will evolve.
 
