@@ -23,7 +23,7 @@ site:
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-{% include toc.html html=content %}
+{% include toc.html html=content id="my_toc" h_min=2 h_max=2 %}
         
         <ul>
           {% if site.show_downloads %}
