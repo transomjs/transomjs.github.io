@@ -1,4 +1,4 @@
-# transomjs.github.io
+# TransomJS
 
 ## transom-core
 Transom-core is a foundation for low-code REST API and realtime server development. Transom applications use metadata to configure pre-built and tested modules that allow developers to quickly piece together services that 'just work'! 
