@@ -1,3 +1,4 @@
 theme: jekyll-theme-dinky
 title: TransomJS
 description: Uncompromising Rapid API development on Node
+remote_theme: CloudCannon/aviator-jekyll-template
