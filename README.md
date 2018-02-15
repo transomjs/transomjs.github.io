@@ -1,4 +1,11 @@
 # TransomJS
+## Uncompromising Rapid API development
+
+### Why TransomJS?
+* Rapid Prototyping
+* No compromises, work directly with all the great Node projects like Restify, Mongoose, Passport and more.
+* Develop locally and host anywhere
+* Scale easily in the cloud
 
 ## transom-core
 Transom-core is a foundation for low-code REST API and realtime server development. Transom applications use metadata to configure pre-built and tested modules that allow developers to quickly piece together services that 'just work'! 
