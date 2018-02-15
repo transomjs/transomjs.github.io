@@ -1,3 +1,3 @@
 # transomjs.github.io
 
-[/docs/](My Docs)
+[My Docs](/docs/)
