@@ -6,7 +6,7 @@ description: Uncompromising RAPID API Development on Node
 url: https://transomjs.github.io
 google_analytics_key:
 permalink: pretty
-baseurl: https://transomjs.github.io/
+baseurl: https://transomjs.github.io
 
 collections:
   gettingstarted:
