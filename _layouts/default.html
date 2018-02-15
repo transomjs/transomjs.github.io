@@ -1,7 +1,3 @@
----
-site: 
-  title: TransomJS Rocks!
----
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -23,8 +19,10 @@ site:
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-{% include toc.html html=content id="my_toc" h_min=2 h_max=2 %}
-        
+        <ul>
+            <li><a class="buttons" href="/docs/page2">Page Two</a></li>
+        </ul>
+
         <ul>
           {% if site.show_downloads %}
             <li class="download"><a class="buttons" href="{{ site.github.zip_url }}">Download ZIP</a></li>
