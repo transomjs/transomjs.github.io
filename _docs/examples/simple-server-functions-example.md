@@ -1,6 +1,6 @@
 ---
-title: Markdown Cheatsheet
-permalink: /docs/cheatsheet/
+title: Simple Server Functions
+permalink: /docs/simple-server-functions-example/
 ---
 
 From [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)

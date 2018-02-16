@@ -1,11 +1,25 @@
 - title: Getting Started
   docs:
   - home
+  - hello-world
   - themes
   - customization
 
 - title: Examples
   docs:
-  - cheatsheet
-  - font-awesome
-  - bootstrap
+  - simple-server-functions-example
+  - scaffold-example
+  - smtp-example
+
+- title: Reference
+  docs:
+  - transom-core
+  - transom-mongoose
+  - transom-mongoose-localuser
+  - transom-mongoose-nonce
+  - transom-smpt
+  - transom-server-functions
+  - transom-socketio-internal
+  - transom-scaffold
+  - transom-ejs-template
+

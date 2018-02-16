@@ -1,6 +1,6 @@
 ---
-title: Font Awesome Icon List
-permalink: /docs/font-awesome/
+title: Scaffold Example
+permalink: /docs/scaffold-example/
 ---
 
 

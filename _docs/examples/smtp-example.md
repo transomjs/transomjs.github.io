@@ -1,6 +1,6 @@
 ---
-title: Bootstrap Features
-permalink: /docs/bootstrap/
+title: SMTP Example
+permalink: /docs/smtp-example/
 ---
 
 
