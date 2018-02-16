@@ -1,5 +1,5 @@
 ---
-title: Transom Mongoose Nonce
+title: Mongoose Nonce
 permalink: /docs/transom-mongoose-nonce/
 ---
 

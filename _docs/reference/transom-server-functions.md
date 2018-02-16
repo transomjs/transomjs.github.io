@@ -1,5 +1,5 @@
 ---
-title: Transom Server Functions
+title: Server Functions
 permalink: /docs/transom-server-functions/
 ---
 

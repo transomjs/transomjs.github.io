@@ -1,5 +1,5 @@
 ---
-title: Transom EJS Templates
+title: EJS Templates
 permalink: /docs/transom-ejs-template/
 ---
 

@@ -2,6 +2,7 @@
   docs:
   - home
   - hello-world
+  - data-mongodb
   - themes
   - customization
 
@@ -17,7 +18,7 @@
   - transom-mongoose
   - transom-mongoose-localuser
   - transom-mongoose-nonce
-  - transom-smpt
+  - transom-smtp
   - transom-server-functions
   - transom-socketio-internal
   - transom-scaffold
