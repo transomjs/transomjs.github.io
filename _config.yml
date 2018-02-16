@@ -6,8 +6,8 @@ description: >
 
 baseurl: "" # /jekyll-doc-theme the subpath of your site, e.g. /blog/
 url: https://transomjs.github.io/ # the base hostname & protocol for your site
-git_address: https://transomjs.github.io
-git_edit_address: https://transomjs.github.io/blob/master
+git_address: https://github.com/transomjs # The landing page for the GH icon, top right.
+git_edit_address: https://github.com/transomjs/transomjs.github.io/blob/master # Allows edit with "Improve this Page"
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
