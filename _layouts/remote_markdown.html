@@ -13,7 +13,7 @@ layout: default
                     $('#markdown-content-container').html($(data + "<hr />Page loaded from: " + link));
                 },
                 error: function(x, t ,m) {
-                    console.log(arguments);
+                    // console.log(arguments);
                     $('#markdown-content-container').html("Sorry, we couldn't fetch that page at the moment."
                                 + "<br />You can go there directly: " + link);
                 }
