@@ -1,5 +1,5 @@
 ---
-title: Transom Scaffold
+title: Scaffold
 permalink: /docs/transom-scaffold/
 ---
 

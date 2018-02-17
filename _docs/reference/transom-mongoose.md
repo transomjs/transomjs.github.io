@@ -1,5 +1,5 @@
 ---
-title: Transom Mongoose
+title: Mongoose
 permalink: /docs/transom-mongoose/
 ---
 

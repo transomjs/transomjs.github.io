@@ -1,5 +1,5 @@
 ---
-title: Transom Socket IO Internal
+title: Socket IO Internal
 permalink: /docs/transom-socketio-internal/
 ---
 
