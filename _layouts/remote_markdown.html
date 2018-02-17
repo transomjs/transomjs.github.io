@@ -5,16 +5,17 @@ layout: default
 <div class="container">
 <script>
     $(document).ready(function() {
+        var link = "<a target=\"_blank\" href=\"{{ page.fallback }}\">{{ page.fallback }}</a>";
         $.ajax({
             url:'https://binaryops.ca/mdproxy/render.php?url={{ page.markdown }}',
                 type:'GET',
                 success: function(data){
-                    $('#markdown-content-container').html($(data));
+                    $('#markdown-content-container').html($(data + "<hr />Page loaded from: " + link));
                 },
                 error: function(x, t ,m) {
                     console.log(arguments);
-                    var link = "<br />You can go there directly: <a target=\"_blank\" href=\"{{ page.fallback }}\">{{ page.fallback }}</a>";
-                    $('#markdown-content-container').html("Sorry, we couldn't fetch that page at the moment." + link);
+                    $('#markdown-content-container').html("Sorry, we couldn't fetch that page at the moment."
+                                + "<br />You can go there directly: " + link);
                 }
         });
     });
