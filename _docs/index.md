@@ -20,34 +20,50 @@ The steps to create and initialize any Transom API server are:
 
 First be sure you [Node.js](http://nodejs.org/) installed.
 
-### Create our server
+### Create the server
 We need to create a server.js file and require our dependencies.
 ```javascript
 // server.js
 
-//Step 1.
+// Step 1.
+// Require and instantiate transom using transom-core.
 const Transom = require('@transomjs/transom-core');
-//create transom using transom-core
 const transom = new Transom();
 
-// require your plugins here as needed
-
-//Step 2.
-// configure each of the plugins.
-transom.configure(plugin , options);
+// Step 2.
+// Require and configure your plugins here as needed.
+const magical = require('magical-example');
+transom.configure(magical, {
+  foo: 123
+});
 
 // Step 3.
-// require our api definition
+// Require your api definition.
 const myApi = require('./myApi');
 
 // Step 4.
-// Initialize my transom and the plgins with the API metadata.
+// Initialize transom and the plugins with the API metadata.
 transom.initialize(myApi).then(function (server) {
- 
+
   // Step 5.
-  // Start the Transom server...
+  // Start the Transom server.
   server.listen(7090, function () {
     console.log('%s listening at %s', server.name, server.url);
   });
 });
 ```
+
+### Write your metadata
+In the above example, we talked about requiring your API definition. Now we're going to provide an example of a simple api definition file. It's quite simply a JavaScript object that has the following structure. Properties in the `transom` node are used to configure transom-core, and properties in the `definition` node are used by the various plugins. By using JavaScript, rather than JSON, we are able to include comments and functions within the metadata, as well as requiring details from other files and applying unit tests to it as your project grows.
+
+```javascript
+// myApi.js
+
+module.exports = {
+	transom: {},
+	definition: {}
+}
+
+```
+
+Each plugin will have it's own metedata requirements but has access to the entire metedata object to use as needed. Documentation about metadata requirements for each individual plugin is included with the plugin. If you want to jump ahead, start with the details about [transom-core](/docs/transom-core/).
