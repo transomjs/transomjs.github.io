@@ -23,7 +23,7 @@ $ npm install --save @transomjs/transom-core @transomjs/transom-server-functions
 ### Create our server
 We need to create an index.js file and require our dependencies.
 ```javascript
-// server.js
+// index.js
 
 const Transom = require('@transomjs/transom-core');
 const transomMongoose = require('@transomjs/transom-server-functions');
@@ -35,9 +35,7 @@ Next, we need to instantiate Transom, register TransomMongoose with the Core.
 const transom = new Transom();
 
 // Register my TransomJS server functions plugin.
-transom.configure(transomServerFunctions, {
-});
-
+transom.configure(transomServerFunctions);
 ```
 
 Now we can initialize the API definition. You'll notice that `transom.initialize()` is asynchronous and returns a Promise. When it resolves, we can start listening for requests.
@@ -54,7 +52,7 @@ transom.initialize(myApi).then(function (server) {
 ```
 
 ### Define our API
-Create a new file called myApi.js in which we'll add a definition for the `hello` function. We'll include a second function that does a simple math multipliation, just for fun.
+Create a new file called myApi.js in which we'll add a definition for the `hello` function. We'll include a second function that does a simple math multiplication, just for fun.
 ```javascript
 // myApi.js
 module.exports = {
