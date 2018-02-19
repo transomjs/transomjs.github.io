@@ -10,18 +10,31 @@ redirect_from: /docs/index.html
 
 Every Transom API follows the same pattern. We'll explain that pattern here and continue with a few simple examples.
 
-The steps to create and initialize any Transom API server are:
+<div class="alert alert-info" role="alert">
+  Official TransomJS modules are prefixed with the @transomjs namespace.
+</div>
 
+### Getting Setup
+First be sure you have [Node.js](http://nodejs.org/) installed.
+
+Let's create a new folder and run `npm init` to create a `package.json` for a new Node project. Let's use `-y` to accept the defaults.
+```bash
+$ npm init -y
+```
+Next, install the Transom-Core module so we can create a basic server.
+
+```bash
+$ npm install --save @transomjs/transom-core
+```
+
+### Create the server
+Create a `server.js` file and open it in your preferred editor.  We'll walk through the following steps to create and initialize a new Transom API server:
 1. Create the Transom server using `transom-core`
 2. Configure all the required Transom plugins
 3. Supply the metadata for each of the plugins in the `definition` property of the `myApi.js` file.
 4. Initialize the Transom server
 5. Start the server
 
-First be sure you [Node.js](http://nodejs.org/) installed.
-
-### Create the server
-We need to create a server.js file and require our dependencies.
 ```javascript
 // server.js
 
@@ -65,7 +78,7 @@ module.exports = {
 }
 
 ```
-You may have noticed that there aren't any endpoint definitions in this all-too-lightweight API Definition file. You'd be right. Endpoints are created by the Plugins you add to your server. During `transom.initialize()` a plugin will read the API definition and create the corresponding endpoints as inidcated by the metadata for that plugin.
+You may have noticed that there aren't any endpoint definitions in this all-too-lightweight API Definition file. You'd be right. Endpoints are created by the Plugins you add to your server. During `transom.initialize()` a plugin will read the API definition and create the corresponding endpoints as indicated by the metadata for that plugin.
 
 If you want to add CRUD enpoints to MongoDB collections, look at the [transom-mongoose](/docs/transom-mongoose/) plugin.  
 ```javascript
@@ -84,7 +97,7 @@ module.exports = {
 };
 ```
 
-Want to add and endpoint to do calculations or manipulate data? Look at the [transom-server-functions](/docs/transom-server-functions/) plugin.
+Want to add and endpoint to do calculations or manipulate data beyond what CRUD can do? Look at the [transom-server-functions](/docs/transom-server-functions/) plugin.
 ```javascript
 module.exports = {
   definition: {
