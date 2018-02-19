@@ -1,6 +1,6 @@
-# Jekyll Doc Theme
+# TransomJS Website
 
-Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
+Go to [the website](https://transomjs.github.io/) for detailed information and documentation about TransomJS.
 
 ## Running locally
 
@@ -11,8 +11,9 @@ You need Ruby and gem before starting, then:
 gem install bundler
 
 # clone the project
-git clone https://github.com/aksakalli/jekyll-doc-theme.git
-cd jekyll-doc-theme
+git clone https://github.com/transomjs/transomjs.github.io.git
+cd transomjs.github.io/
+
 
 # run jekyll with dependencies
 bundle exec jekyll serve
