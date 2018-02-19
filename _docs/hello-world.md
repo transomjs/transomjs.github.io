@@ -5,10 +5,7 @@ redirect_from: /docs/hello-world.html
 ---
 
 ## TransomJS without a MongoDB
-
 First be sure you have [Node.js](http://nodejs.org/) installed.
-<!-- You can get a full copy of the code in this article here. -->
-
 
 Let's create a new folder and run `npm init` to create a package.json for a new Node project. I'll use `-y` to choose the defaults.
 
