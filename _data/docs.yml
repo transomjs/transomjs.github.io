@@ -8,10 +8,11 @@
 
 - title: Examples
   docs:
+  - mongodb-example  
   - server-functions-example
+  - secured-function-example
   - scaffold-example
   - smtp-example
-  - mongodb-example
 
 - title: Reference
   docs:
