@@ -53,7 +53,7 @@ transom.initialize(myApi).then(function (server) {
 });
 ```
 
-### Write your metadata
+### Write your API Definition
 In the above example, we talked about requiring your API definition. Now we're going to provide an example of a simple api definition file. It's quite simply a JavaScript object that has the following structure. Properties in the `transom` node are used to configure transom-core, and properties in the `definition` node are used by the various plugins. By using JavaScript, rather than JSON, we are able to include comments and functions within the metadata, as well as requiring details from other files and applying unit tests to it as your project grows.
 
 ```javascript
@@ -65,5 +65,44 @@ module.exports = {
 }
 
 ```
+You may have noticed that there aren't any endpoint definitions in this all-too-lightweight API Definition file. You'd be right. Endpoints are created by the Plugins you add to your server. During `transom.initialize()` a plugin will read the API definition and create the corresponding endpoints as inidcated by the metadata for that plugin.
 
+If you want to add CRUD enpoints to MongoDB collections, look at the [transom-mongoose](/docs/transom-mongoose/) plugin.  
+```javascript
+module.exports = {
+  definition: {
+    mongoose: {
+      movies: {
+        attributes: {
+          title: "string",
+          year: "number",
+          genre: "string"
+        }
+      }			
+    }
+  }
+};
+```
+
+Want to add and endpoint to do calculations or manipulate data? Look at the [transom-server-functions](/docs/transom-server-functions/) plugin.
+```javascript
+module.exports = {
+  definition: {
+    functions: {
+      timesten: {
+        methods: ["POST"],
+        "function": function(server, req, res, next) {
+          if (req.params["value"]) {
+            const v = Number.parseFloat(req.params["value"]);
+            res.send(v + " times ten is " + (v * 10) );
+          }	else {
+            res.send("Value not provided");
+          }
+          next();
+        } 
+      }
+    }
+  }
+};
+```
 Each plugin will have it's own metedata requirements but has access to the entire metedata object to use as needed. Documentation about metadata requirements for each individual plugin is included with the plugin. If you want to jump ahead, start with the details about [transom-core](/docs/transom-core/).
