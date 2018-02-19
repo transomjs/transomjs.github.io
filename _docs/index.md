@@ -5,7 +5,7 @@ redirect_from: /docs/index.html
 ---
 
 ### Introduction
-<!-- Every Transom API follows the same pattern. We'll explain that pattern here and continue with a few simple examples. -->
+TransomJS is a framework for building REST APIs with Javascript. You tell it what you want with configuration details and it does the heavy lifting for you.
 A REST API developed using TransomJS API will consist of three primary components: Configuration, Core & Plugins.
 
 #### Configuration
