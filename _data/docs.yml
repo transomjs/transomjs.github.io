@@ -8,9 +8,10 @@
 
 - title: Examples
   docs:
-  - simple-server-functions-example
+  - server-functions-example
   - scaffold-example
   - smtp-example
+  - mongodb-example
 
 - title: Reference
   docs:
