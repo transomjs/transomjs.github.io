@@ -1,13 +1,10 @@
 ---
-title: Data in MongoDB
+title: TransomJS with MongoDB
 permalink: /docs/data-mongodb/
 ---
 
-## TransomJS without a MongoDB
-
 First be sure you have [Node.js](http://nodejs.org/) installed.
-You can get a full copy of the code in this article here.
-
+You can get a full copy of the code in this article [here](https://github.com/4umfreak/transom-mongoose-example).
 
 Let's create a new folder and run `npm init` to create a package.json for a new Node project. I'll use `-y` to choose the defaults.
 

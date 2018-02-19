@@ -1,14 +1,20 @@
 ---
-title: Welcome
+title: Welcome to TransomJS
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-## Creating Transom APIs
-
 ### Introduction
 
 Every Transom API follows the same pattern. We'll explain that pattern here and continue with a few simple examples.
+Each TransomJS API consists of three components:
+#### Transom Core
+Core is responsible for creating and configuring the Restify server
+#### Plugins
+Plugins are responsible for adding end-points to the server
+#### Configuration
+Your configuration of the core and the plugins.
+
 
 <div class="alert alert-info" role="alert">
   Official TransomJS modules are prefixed with the @transomjs namespace.
@@ -30,7 +36,7 @@ $ npm install --save @transomjs/transom-core
 ### Create the server
 Create a `server.js` file and open it in your preferred editor.  We'll walk through the following steps to create and initialize a new Transom API server:
 1. Create the Transom server using `transom-core`
-2. Configure all the required Transom plugins
+2. Configure all the required Transom plugins. This adds the end-points to the API.
 3. Supply the metadata for each of the plugins in the `definition` property of the `myApi.js` file.
 4. Initialize the Transom server
 5. Start the server

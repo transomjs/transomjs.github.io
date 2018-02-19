@@ -4,7 +4,7 @@ permalink: /docs/hello-world/
 redirect_from: /docs/hello-world.html
 ---
 
-## TransomJS - Hello World using a server function
+### A simple server function
 The code in this article is  available in this [repo](https://github.com/binaryops-wiebo/transom-functions-simple-example)
 
 First be sure you have [Node.js](http://nodejs.org/) installed.
