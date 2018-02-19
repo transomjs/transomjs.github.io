@@ -5,23 +5,26 @@ redirect_from: /docs/index.html
 ---
 
 ### Introduction
+<!-- Every Transom API follows the same pattern. We'll explain that pattern here and continue with a few simple examples. -->
+A REST API developed using TransomJS API will consist of three primary components: Configuration, Core & Plugins.
 
-Every Transom API follows the same pattern. We'll explain that pattern here and continue with a few simple examples.
-Each TransomJS API consists of three components:
-#### Transom Core
-Core is responsible for creating and configuring the Restify server
+#### Configuration
+Your configuration (aka API definition) is a JavaScript object (with a basic pre-defined structure) that can be composed however you like. Configuation data typically consists of static data elements and functions. It's recommended to start with a single file that exports your configuration and expand as needed when your application grows.
+
+#### Core
+Transom Core is responsible for loading and initializing plugins as well as configuring the Restify server. Plugins must be registered with the core where they are configured and then initialized. During initialization they have full access to the configuration data to determine which routes to add to the server. A key component of the server is the `registry`. The registry is a global object store where plugins have access to shared Objects that can be used throughout the application.
+
 #### Plugins
 Plugins are responsible for adding end-points to the server
-#### Configuration
-Your configuration of the core and the plugins.
+Plugins are independant Javascript Objects that can be initialized by the Transom server. When a plugin is initialized, it has access to both the server instance and the entire configuration data object. Using details found in the configuration, a plugin is able to attach routes (REST endpoints) to the server and create client Object instances in the server registry.
 
 
 <div class="alert alert-info" role="alert">
-  Official TransomJS modules are prefixed with the @transomjs namespace.
+  Official TransomJS plugins are prefixed with the @transomjs namespace.
 </div>
 
 ### Getting Set Up
-First be sure you have [Node.js](http://nodejs.org/) installed.
+First, be sure you have [Node.js](http://nodejs.org/) installed.
 
 Let's create a new folder and run `npm init` to create a `package.json` for a new Node project. Let's use `-y` to accept the defaults.
 ```bash
