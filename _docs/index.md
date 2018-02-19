@@ -14,7 +14,7 @@ Every Transom API follows the same pattern. We'll explain that pattern here and 
   Official TransomJS modules are prefixed with the @transomjs namespace.
 </div>
 
-### Getting Setup
+### Getting Set Up
 First be sure you have [Node.js](http://nodejs.org/) installed.
 
 Let's create a new folder and run `npm init` to create a `package.json` for a new Node project. Let's use `-y` to accept the defaults.
@@ -73,8 +73,8 @@ In the above example, we talked about requiring your API definition. Now we're g
 // myApi.js
 
 module.exports = {
-	transom: {},
-	definition: {}
+  transom: {},
+  definition: {}
 }
 
 ```
@@ -108,7 +108,7 @@ module.exports = {
           if (req.params["value"]) {
             const v = Number.parseFloat(req.params["value"]);
             res.send(v + " times ten is " + (v * 10) );
-          }	else {
+          } else {
             res.send("Value not provided");
           }
           next();

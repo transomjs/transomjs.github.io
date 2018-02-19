@@ -59,22 +59,22 @@ Create a new file called myApi.js in which we'll add a definition for a Mongoose
 ```javascript
 // myApi.js
 module.exports = {
-	definition: {
-		mongoose: {
-			movies: {
-				attributes: {
-					title: "string",
-					year: "number",
-					genre: "string"
-				},
-				seed: [
+  definition: {
+    mongoose: {
+      movies: {
+        attributes: {
+          title: "string",
+          year: "number",
+          genre: "string"
+        },
+        seed: [
           {title: "Airplane!", year: 1980, genre: "comedy"},
           {title: "Doctor Zhivago", year: 1965, genre: "drama"},
           {title: "Avatar", year: 2009, genre: "action"}
         ]
-			}			
-		}
-	}
+	  }
+    }
+  }
 };
 ```
 
