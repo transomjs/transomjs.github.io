@@ -5,7 +5,7 @@ redirect_from: /docs/hello-world.html
 ---
 
 ### A simple server function
-The code in this article is  available in this [repo](https://github.com/binaryops-wiebo/transom-functions-simple-example)
+The code in this article is [available in this repo](https://github.com/binaryops-wiebo/transom-functions-simple-example)
 
 First be sure you have [Node.js](http://nodejs.org/) installed.
 
@@ -56,30 +56,29 @@ Create a new file called myApi.js in which we'll add a definition for the `hello
 ```javascript
 // myApi.js
 module.exports = {
-	note: "This is a very simple example NodeJS app that uses TransomJS and the Server Functions module.",
-	name: "My functions Example App",
-	transom: {},
-	definition: {
-        functions: {
-			hello:{
-				"methods": ["GET"],
-				"function": function(server, req, res, next) {
-					//do stuff
-					res.send("hello world");
-					next();
-					}
-			},
-			timesten: {
-				methods: ["GET"],
-				"function": function(server, req, res, next) {
-					if (req.params["val"]){
-						const v = Number.parseFloat(req.params["val"]);
-						res.send(v + " times ten is " + (v*10) );
-						next();
-					}	
-				} 
-			}
-		}	
+  note: "This is a simple TransomJS example that uses the Server Functions module to implement Hello World",
+  name: "My functions Example App",
+  transom: {},
+  definition: {
+      functions: {
+        hello:{
+          methods: ["GET"],
+          "function": function(server, req, res, next) {
+            res.send("hello world");
+            next();
+          }
+        },
+        timesten: {
+          methods: ["GET"],
+          "function": function(server, req, res, next) {
+            if (req.params["val"]){
+              const v = Number.parseFloat(req.params["val"]);
+              res.send(v + " times ten is " + (v*10) );
+              next();
+            }  
+          } 
+        }
+      }  
     }
 };
 ```
