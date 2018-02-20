@@ -80,13 +80,13 @@ When we defined `mongoose.movies` in the file above, Transom-Mongoose used that 
 
 ##### Create
 
- * server.post(`${uriPrefix}/db/${route.entity} //insert single
+ * server.post(`${uriPrefix}/db/${route.entity} **//insert single**
 
 ##### Read
 
  * server.get(`${uriPrefix}/db/${route.entity} **// find query**
  * server.get(`${uriPrefix}/db/${route.entity}/count **// count query**
- * server.get(`${uriPrefix}/db/${route.entity}/:__id/:__attribute/:__filename **// find single stored binary**
+ * server.get(`${uriPrefix}/db/${route.entity}/:__id/:__attribute/:__filename **// find single binary**
  * server.get(`${uriPrefix}/db/${route.entity}/:__id **// find single**
 
 ##### Update
@@ -107,22 +107,22 @@ In simple cases CRUD data access works great, but when developing more complex a
 
 ```javascript
 server.get('groupBySpecies', function (req, res, next) {
-	const mongoose = server.registry.get('mongoose');
-	const Animals = mongoose.model('dynamic-animals')
+  const mongoose = server.registry.get('mongoose');
+  const Animals = mongoose.model('dynamic-animals')
 
-	Animals.find({}, function (err, items) {
-		if (err) {
-			return next(err);
-		}
-		const result = {};
-		for (var animal of items) {
-			if (!result[animal.species]) {
-				result[animal.species] = [];
-			}
-			result[animal.species].push(animal);
-		}
-		res.send(result);
-	});
+  Animals.find({}, function (err, items) {
+    if (err) {
+      return next(err);
+    }
+    const result = {};
+    for (var animal of items) {
+      if (!result[animal.species]) {
+        result[animal.species] = [];
+      }
+      result[animal.species].push(animal);
+    }
+    res.send(result);
+  });
 });
 ```
 
