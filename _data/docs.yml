@@ -3,9 +3,7 @@
   - home
   - hello-world
   - data-mongodb
-  - themes
-  - customization
-
+  
 - title: Examples
   docs:
   - mongodb-example  
