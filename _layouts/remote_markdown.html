@@ -5,34 +5,33 @@ layout: default
 <div class="container">
 <script>
     $(document).ready(function() {
-        var link = "<a target=\"_blank\" href=\"{{ page.fallback }}\">{{ page.fallback }}</a>";
-        var fallbck = "{{ page.fallback }}";
+        var link = '<a target="_blank" href="{{ page.fallback }}">{{ page.fallback }}</a>';
         $.ajax({
             url:'https://binaryops.ca/mdproxy/render.php?url={{ page.markdown }}',
                 type:'GET',
                 success: function(data){
-                    $('#markdown-content-container').html($(data + "<hr />Page loaded from: " + link));
-                    var repoLink = fallbck.split("blob")[0];
-                    $('#codelink').attr("href", repoLink);
-                    $('.code-link').show();
+                    var repoLink = "{{ page.fallback }}".split("blob")[0];
+
+                    var linkHtml = '<a id="codelink" class="btn btn-primary btn-sm"'
+                            + ' style="border-radius:20px;text-transform:none;float:right;" target="_blank" href="' 
+                            + repoLink
+                            + '"><i class="fa fa-github" style="font-size:1.5em;">&nbsp;</i> Get the Code</a>';
+
+                    $('#markdown-content-container').html(linkHtml + data + "<hr />Page loaded from: " + link);
                 },
                 error: function(x, t ,m) {
-                    // console.log(arguments);
                     $('#markdown-content-container').html("Sorry, we couldn't fetch that page at the moment."
-                                + "<br />You can go there directly: " + link);
+                            + "<br />You can go there directly: " + link);
                 }
         });
     });
 </script>    
     
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" style="z-index:100;">
           {% include docs_nav.html %}
         </div>
-        <div class="col-md-8" style="border: 1px solid white;">
-            <div class="pull-right code-link"  >
-                <a id="codelink" target="_blank" href="http://google.com"><i class="fa fa-github">&nbsp;Get the code</i></a>
-            </div>
+        <div class="col-md-8">
             <div id="markdown-content-container">
                 <center>
                     <div class="fa-3x">
