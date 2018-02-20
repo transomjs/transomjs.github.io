@@ -127,4 +127,4 @@ module.exports = {
   }
 };
 ```
-Each plugin will have it's own metedata requirements but has access to the entire metedata object to use as needed. Documentation about metadata requirements for each individual plugin is included with the plugin. If you want to jump ahead, start with the details about [transom-core](/docs/transom-core/).
+Each plugin will have it's own metadata requirements but has access to the entire metadata object to use as needed. Documentation about metadata requirements for each individual plugin is included with the plugin. If you want to jump ahead, start with the details about [transom-core](/docs/transom-core/).
