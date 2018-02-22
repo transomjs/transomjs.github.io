@@ -13,6 +13,7 @@ The objective of TransomJS is to be simple enough, so it can be referenced in an
 #### Complete Flexibility
 As a developer, you can quickly and easily configure existing plugins with a simple javascript object, and get all the functionality from the plugin, without writing all that code. You can also create your own plugins for features and functionality that is not available from existing plugins. 
 
+#### Based on the projects you know
 Most importantly, you can always write your own code, with access to all the great components that TransomJS is based on, like Restify, Passport, Mongoose and SocketIO. 
 
 > You'll never get in a situation where you can't deliver on a requirement because you chose TransomJS to develop the API.
