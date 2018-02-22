@@ -1,5 +1,5 @@
 ---
-title: Server Functions Example
+title: Server Functions Simple
 permalink: /docs/server-functions-example/
 layout: remote_markdown
 markdown: https://raw.githubusercontent.com/binaryops-wiebo/transom-functions-simple-example/master/README.md
