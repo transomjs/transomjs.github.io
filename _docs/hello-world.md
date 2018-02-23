@@ -67,16 +67,6 @@ module.exports = {
             res.send("hello world");
             next();
           }
-        },
-        timesten: {
-          methods: ["GET"],
-          "function": function(server, req, res, next) {
-            if (req.params["val"]){
-              const v = Number.parseFloat(req.params["val"]);
-              res.send(v + " times ten is " + (v*10) );
-              next();
-            }  
-          } 
         }
       }  
     }
