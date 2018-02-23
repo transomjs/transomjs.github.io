@@ -5,7 +5,7 @@ redirect_from: /docs/index.html
 ---
 
 ### Introduction
-TransomJS is a framework for building REST APIs with Javascript. You tell it what you want with configuration details and it does the heavy lifting for you.
+TransomJS is a library for building REST APIs with Javascript. You tell it what you want with configuration details and it does the heavy lifting for you. You get to write your custom code and add it to the API.
 A REST API developed using TransomJS API will consist of three primary components: Configuration, Core & Plugins.
 
 #### Configuration
