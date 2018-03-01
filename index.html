@@ -4,13 +4,46 @@ layout: default
 
 <div class="header-container jumbotron">
     <div class="container">
-        <h1>TransomJS - Uncompromising Rapid API development on Node</h1>
+        <h1>TransomJS - Uncompromising REST API development on Node</h1>
         <p>
-            TransomJS allows developers to create beautiful REST-APIs with simple metadata. Turn an empty Restify server into a full-fledged API in minutes.
-            Need something more? Go ahead, there are lots of built-in integration points and nothing in your way to write your own custom endpoints.             
+            TransomJS is a REST API development library built on top of Restify. 
+            Quickly create beautiful APIs that 'just work' 
+            using pre-built plugins configured with JavaScript.
+
+            TransomJS never gets in the way, you can always write your own code.
+
+            Let Transom handle the
+            <span style="display:inline-block;font-weight:bold;text-align:center;line-height:1em;border-bottom:1px dotted white;" id="js-rotating"> 
+                Content Templating| 
+                Authorization| 
+                CRUD Endpoints| 
+                Static Assets| 
+                Model Validations| 
+                Real-Time Events| 
+                User Workflows| 
+                Authentication</span> 
+            and write your own code for the rest.
         </p>
-        <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | prepend: site.baseurl }}" role="button">Read the Docs</a></p>
+        <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | prepend: site.baseurl }}" role="button">Read the Docs</a></p>               
     </div>
+
+    <script>
+        var greatestWidth;
+        $("#js-rotating").Morphext({
+            animation: "rotateIn",
+            separator: "|",
+            speed: 3000,
+            complete: function () {
+                var currentWidth = $("#js-rotating").width();
+                // console.log('currentWidth', currentWidth);
+                if ((greatestWidth || 0) < currentWidth) {
+                    greatestWidth = currentWidth;
+                    // console.log('greatestWidth', greatestWidth);
+                    $("#js-rotating").css({minWidth: greatestWidth});
+                }
+            }
+        });
+    </script>    
 </div>
 
 <div class="container">
@@ -20,11 +53,15 @@ layout: default
             <h2 class="header-light regular-pad">What is TransomJS?</h2>
             <blockquote>
               <p>
-                TransomJS is a rapid API development library built on top of Restify. 
-                Quickly compose services that 'just work' using pre-built plugins configured with JavaScript.
-                Transom applications are deployable and scalable anywhere you can run NodeJS.
-                Using standard Node libraries like Restify, Mongoose and Passport, TransomJS gives you all the benefits with minimal effort.
-                TransomJS is based on plugins from the ground up, allowing new ones to be added and existing ones to get modified or replaced.
+                TransomJS is a rapid API development library built on top of Restify and based on plugins from the ground up.
+                Using standard Node libraries like Mongoose, Passport and SocketIO, TransomJS plugins give you 
+                quality and speed with minimal effort. 
+                As a developer using TransomJS, you have full control over which plugins get added to your API.
+
+                Transom applications are production ready and deployable anywhere you can run NodeJS.
+
+                Need something more? Go ahead, there are lots of built-in integration points and nothing in 
+                your way to write your own custom endpoints.                             
             </p>
             </p>
                 We understand that every application is going to have some special sauce that does
