@@ -53,7 +53,7 @@ $font-size-base:          13px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-$font-size-h1:            56px !default;
+$font-size-h1:            50px !default; // MVV: was 56px, but too large on mobile
 $font-size-h2:            45px !default;
 $font-size-h3:            34px !default;
 $font-size-h4:            24px !default;
